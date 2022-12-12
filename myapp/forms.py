@@ -1,14 +1,8 @@
 from django import forms
 
-SHIFTS = (
-    ("1", "Morning"),
-    ("2", "Afternoon"),
-    ("3", "Evening"),
-)
+from .models import Booking
 
-class InputForm(forms.Form):
-    first_name = forms.CharField(max_length = 200)
-    last_name = forms.CharField(max_length = 200)
-    email = forms.EmailField(label="Enter email address")
-    shift = forms.ChoiceField(choices = SHIFTS)
-    time_log = forms.TimeField(help_text= "Enter the exact time")
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = "__all__"
