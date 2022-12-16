@@ -5,11 +5,11 @@ from . import views
 # given an HTTP request
 
 urlpatterns = [
+    path('home/', views.home, name = "home"),
     path('about/', views.about, name = "about"), 
-    #path('menu/', views.menu, name = "menu"),
-    path('menu_card/', views.menu_by_id, name = "menu_card"),
-    path('index/', views.index, name = "index"),
-    path('', views.home, name = "home"),
-    path('book/', views.form_view, name="book"),
+    path('menu/', views.menu, name = "menu"),
+    path('book/', views.book, name = "book"),
+    #path('book/', views.form_view, name="book"),
+    #path('index/', views.index, name = "index"),
 
 ]
