@@ -5,6 +5,8 @@ from . import views
 # given an HTTP request
 
 urlpatterns = [
+    path('about/', views.about, name = "about"), 
+    path('menu/', views.menu, name = "menu"),
     path('index/', views.index, name = "index"),
     path('', views.home, name = "home"),
     path('book/', views.form_view, name="book"),
