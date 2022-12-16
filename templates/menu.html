@@ -11,10 +11,18 @@
 <body>
     <!-- Add heading code -->
     <h1 style="color: #495E57"> Menu </h1>
-    <!-- Add paragraph code -->
-    <p> {{content.menu}} </p>
-    <!-- Add image code -->
+    <!-- Add table code -->
+    <table style = "border: 1px solid black;">
+        {% for item in mains %}
+        <tr>
+            <td style = "border:1px solid black;">{{item.name}}</td>
+            <td style = "border:1px solid black;">{{item.price}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
+    <h2 style="color: #495E57"> Desert </h2>
+    <!-- Add image code -->
     <img src="{% static 'img/dessert.jpg' %}">
 
 </body>
