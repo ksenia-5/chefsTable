@@ -1,11 +1,15 @@
 from django.contrib import admin
-from .models import Menu, Drink, DrinkCategory, Booking, Employee
+from .models import Menu, Booking
+
 
 # Register your models here.
 admin.site.register(Menu)
-admin.site.register(Drink)
-admin.site.register(DrinkCategory)
 admin.site.register(Booking)
-admin.site.register(Employee)
+
+# Other models
+# from .models import Drink, DrinkCategory,  Employee
+# admin.site.register(Drink)
+# admin.site.register(DrinkCategory)
+# admin.site.register(Employee)
 
 

@@ -11,7 +11,22 @@ def about(request):
     return render(request, "about.html")
 
 def menu(request):
-    return render(request, "menu.html")
+    menu_data = Menu.objects.all()
+    main_data = {"menu": menu_data}
+    return render(request, "menu.html", {"menu": main_data})
 
 def book(request):
-    return render(request, "book.html")
+    form = BookingForm()
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+    context = {'form':form}
+    return render(request, "book.html", context)
+
+def display_menu_items(request, pk = None):
+    if pk:
+        menu_item = Menu.objects.get(pk=pk)
+    else:
+        menu_item = ""
+    return render(request, 'menu_item.html', {"menu_item": menu_item})
